@@ -1,2 +1,42 @@
-<p>solicitud-matricula works!</p>
+<p>Periodo lectivo actual</p>
+<mat-form-field appearance="fill">
+    <mat-label>Carrera</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+      <mat-select-trigger>
+        {{toppings.value?.[0] || ''}}
+        <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+          (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Cursos</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+      <mat-select-trigger>
+        {{toppings.value?.[0] || ''}}
+        <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+          (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Periodo</mat-label>
+    <mat-select [formControl]="toppings" multiple>
+      <mat-select-trigger>
+        {{toppings.value?.[0] || ''}}
+        <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+          (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      </mat-select-trigger>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h1>Ordinaria</h1>
+  <input type="checkbox" ng-model="vm.clarooscuro" ng-true-value="claro" ng-false-value="oscuro" />
+  <h2>Extraordinaria</h2>
+  <input type="checkbox" ng-model="vm.clarooscuro" ng-true-value="claro" ng-false-value="oscuro" />
 <table-overview-example></table-overview-example>

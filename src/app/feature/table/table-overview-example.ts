@@ -8,18 +8,18 @@ export interface UserData {
   name: string;
   progress: string;
   fruit: string;
+  types:string;
 }
+const TYPES: string[] = [
+'Ordinaria',
+'Extraordinaria'
+];
 
 /** Constants used to fill up our data base. */
 const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
+  'Externo',
+  'Interno'
+
 ];
 const NAMES: string[] = [
   'Maia',
@@ -52,7 +52,7 @@ const NAMES: string[] = [
   templateUrl: 'table-overview-example.html',
 })
 export class TableOverviewExample implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'types'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -94,5 +94,6 @@ function createNewUser(id: number): UserData {
     name: name,
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
+    types: TYPES[Math.round(Math.random() * (TYPES.length - 1))],
   };
 }

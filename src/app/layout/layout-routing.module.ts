@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SolicitudMatriculaComponent } from '../feature/solicitud-matricula/solicitud-matricula.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
+import { ListSolicitudMatriculasComponent } from '../feature/solicitud-matricula/list/list.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,14 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'solicitudes-matriculas', component: SolicitudMatriculaComponent },
+
+      {
+        path: 'solicitudes-matriculas',
+        children: [
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+          { path: 'list', component: ListSolicitudMatriculasComponent },
+        ],
+      },
     ],
   },
 ];
