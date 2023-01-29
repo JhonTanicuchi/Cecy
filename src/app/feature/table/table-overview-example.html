@@ -1,9 +1,9 @@
 <mat-form-field>
-    <mat-label>Filter</mat-label>
+    <mat-label>Buscar</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
 </mat-form-field>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8x ">
     <table mat-table [dataSource]="dataSource" matSort>
 
         <!-- ID Column -->
@@ -12,11 +12,12 @@
             <td mat-cell *matCellDef="let row"> {{row.id}} </td>
         </ng-container>
 
-        <!-- Progress Column -->
-        <ng-container matColumnDef="progress">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Progreso </th>
-            <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+        <!-- Progreso Column -->
+        <ng-container matColumnDef="progreso">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Progreso </th>
+          <td mat-cell *matCellDef="let row"> {{row.progreso}} </td>
         </ng-container>
+
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">

@@ -6,10 +6,15 @@ import { MatTableDataSource } from '@angular/material/table';
 export interface UserData {
   id: string;
   name: string;
-  progress: string;
   fruit: string;
-  types:string;
+  types: string;
+  progreso: string;
 }
+const PROGRESO: string[] = [
+  'En Proceso',
+  'Aprobado',
+  'Rechazado'
+];
 const TYPES: string[] = [
 'Ordinaria',
 'Extraordinaria'
@@ -52,7 +57,7 @@ const NAMES: string[] = [
   templateUrl: 'table-overview-example.html',
 })
 export class TableOverviewExample implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit', 'types'];
+  displayedColumns: string[] = ['id', 'name',  'fruit', 'types', 'progreso'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -92,8 +97,8 @@ function createNewUser(id: number): UserData {
   return {
     id: id.toString(),
     name: name,
-    progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
     types: TYPES[Math.round(Math.random() * (TYPES.length - 1))],
+    progreso: PROGRESO[Math.round(Math.random() * (PROGRESO.length - 1))],
   };
 }
