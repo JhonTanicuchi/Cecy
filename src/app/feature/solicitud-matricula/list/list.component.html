@@ -1,161 +1,134 @@
 <header-solicitud-matriculas>
   <breadcrumbs-solicitud-matriculas breadcrumbs></breadcrumbs-solicitud-matriculas>
+  <search-solicitud-matriculas search></search-solicitud-matriculas>
   <tabs-solicitud-matriculas tabs></tabs-solicitud-matriculas>
 </header-solicitud-matriculas>
 
-<div class="w-full h-[calc(100vh-4rem-9rem+4px)] p-4 bg-white border-t-[1px] border-[#535a6650]">
-  <div class="flex justify-between my-4">
-    <div class="w-1/6">
-      <div class="relative">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-          <span class="fa-solid fa-magnifying-glass"></span>
-        </div>
-        <button
-          class="btn btn-sm gap-2 rounded-md bg-primary text-xs border-0 shadow	shadow-[#6b6b6b] px-8 ml-4 hover:bg-primary-focus hover:scale-105"
-          routerLink="/layout/personal/usuarios/form">
-          <span class="fas fa-plus text-sm leading-none"></span>
-          Descargar CSV
-        </button>
-      </div>
+<div class="w-full h-[calc(100vh-4rem-9rem+4px)] p-6 bg-white border-t-[1px] border-[#535a6650]">
+  <div class="flex justify-between mb-6">
+    <div class="w-2/6">
+      <button type="button"
+        class="inline-flex items-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-4 h-8 text-center"><svg
+          aria-hidden="true" class="w-4 h-4 mr-2 fill-current" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+            clip-rule="evenodd"></path>
+        </svg>Descargar CSV</button>
+
     </div>
     <div class="flex">
-      <div>
-        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button">Cursos<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg></button>
+      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">Carrera<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg></button>
 
-        <!-- Dropdown menu -->
-        <div id="dropdownDefaultCheckbox"
-          class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-          <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-1" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-1"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">D.Software</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input checked id="checkbox-item-2" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-2"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Marketing</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input checked id="checkbox-item-5" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-5" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Arte
-                  Culinario</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-3" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Control
-                  de Incendios</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-3" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Diseño de
-                  modas</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-3" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Guia
-                  Nacional</label>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button">Paralelos <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg></button>
-
-        <!-- Dropdown menu -->
-        <div id="dropdownDefaultCheckbox"
-          class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-          <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-5" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
-                  chuevos</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input checked id="checkbox-item-2" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Checked
-                  state</label>
-              </div>
-            </li>
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-3" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
-                  checkbox</label>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div>
-        <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox"
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button">Periodo <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg></button>
-
-        <!-- Dropdown menu -->
-        <div id="dropdownDefaultCheckbox"
-          class="hidden z-10 w-48 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-          <ul class="p-3 space-y-3 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownCheckboxButton">
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-1" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-1"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">online</label>
-              </div>
-            </li>
-
-            <li>
-              <div class="flex items-center">
-                <input id="checkbox-item-3" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                <label for="checkbox-item-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default
-                  checkbox</label>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Desarrollo de
+              Software</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Marketing</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Turismo</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Diseño de
+              modas</a>
+          </li>
+        </ul>
       </div>
 
+      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown1"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">Curso<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg></button>
 
+      <div id="dropdown1" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">REST-API</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">POO</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">NEST.js</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Angular
+              Avanzado</a>
+          </li>
+        </ul>
+      </div>
 
+      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown2"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">Paralelo<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg></button>
+
+      <div id="dropdown2" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">A-Chiloe</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">B-Chiloe</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">C-Chiloe</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">D-Chiloe</a>
+          </li>
+        </ul>
+      </div>
+
+      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown3"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">Periodo <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg></button>
+
+      <div id="dropdown3" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+          </li>
+          <li>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+              out</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -185,18 +158,25 @@
                 Identificación
               </th>
               <th scope="col" class="py-3 px-6">
-                Correo electrónico
+                Nombre curso
               </th>
               <th scope="col" class="py-3 px-6">
-                Rol
+                Carrera
               </th>
               <th scope="col" class="py-3 px-6">
-                <span class="sr-only">Accciones</span>
+                Estado
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Fecha
+              </th>
+
+              <th scope="col" class="py-3 px-6">
+                <span class="sr-only">Acciones</span>
               </th>
             </tr>
           </thead>
           <tbody class="divide-y-[0.5px] divide-[#535A6640]">
-            <tr class="bg-white hover:bg-neutral-content transition-all"*ngFor="let enrollment of enrollments">
+            <tr class="bg-white hover:bg-neutral-content transition-all" *ngFor="let enrollment of enrollments">
               <th scope="row" class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral">
                 1
               </th>
@@ -204,22 +184,29 @@
                 <div tabindex="0" class="avatar py-1">
                   <div class="w-9 mask mask-squircle">
                     <div class="inline-flex overflow-hidden relative justify-center items-center w-9 h-9 bg-neutral">
-                      <span class="font-medium text-neutral-content uppercase">"Huevo"</span>
+                      <span
+                        class="font-medium text-neutral-content uppercase">{{enrollment.student_id.person_id|NameInitials}}</span>
                     </div>
                   </div>
                 </div>
               </td>
               <td class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral">
-                Ruben Perez
+                {{enrollment.student_id.person_id.names}} {{enrollment.student_id.person_id.last_names}}
               </td>
               <td class="py-1 px-6">
-                1726508581
+                {{enrollment.student_id.person_id.identification}}
               </td>
               <td class="py-1 px-6">
-                juan-perez@oulook.com
+                {{enrollment.course_id.name}}
               </td>
               <td class="py-1 px-6">
-                secretario
+                {{enrollment.career_id.name}}
+              </td>
+              <td class="py-1 px-6">
+                {{enrollment.state_id.value}}
+              </td>
+              <td class="py-1 px-6">
+                {{enrollment.created_at| date:'dd/MM/yyyy'}}
               </td>
               <th class="py-1 px-6 text-right">
                 <span
