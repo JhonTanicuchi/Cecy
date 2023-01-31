@@ -15,5 +15,9 @@ export class EnrollmentService {
   public getEnrollments(): Observable<Enrollment[]> {
     return this.http.get<Enrollment[]>(this.url);
   }
+  //GET /enrollments/search/term/{term}
+  public getEnrollmentsByTerm(term: string): Observable<Enrollment[]> {
+    return this.http.get<Enrollment[]>(this.url + '/search/term/' + term);
+  }
 }
 

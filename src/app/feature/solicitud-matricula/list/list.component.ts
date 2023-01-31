@@ -26,4 +26,16 @@ export class ListSolicitudMatriculasComponent implements OnInit {
       }
     });
   }
+  searchEnrollments(term: string) {
+    this.enrollmentService.getEnrollmentsByTerm(term).subscribe((res: any) => {
+      if (res.status === 'success') {
+        this.enrollments = res.data.enrollments;
+      }
+    });
+  }
+  receiveSearch($event: string) {
+    console.log($event);
+    this.searchEnrollments($event);
+  }
+
 }
