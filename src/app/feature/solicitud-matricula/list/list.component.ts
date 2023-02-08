@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Enrollment } from 'src/app/models/enrollment.interface';
-import { EnrollmentService } from '../solicitud-matricula.service';
+import { Param } from 'src/app/models/param.interface';
+import { EnrollmentService } from 'src/app/services/enrollments.service';
 
 @Component({
   selector: 'list-solicitud-matriculas',
@@ -9,7 +10,11 @@ import { EnrollmentService } from '../solicitud-matricula.service';
 })
 export class ListSolicitudMatriculasComponent implements OnInit {
   enrollments: Enrollment[] = [];
+
+  params: Param[] = [];
+
   constructor(private enrollmentService: EnrollmentService) {}
+
   ngOnInit(): void {
     this.getEnrollments();
   }
@@ -26,16 +31,37 @@ export class ListSolicitudMatriculasComponent implements OnInit {
       }
     });
   }
-  searchEnrollments(term: string) {
+
+  getEnrollmentsByTerm(term: string) {
     this.enrollmentService.getEnrollmentsByTerm(term).subscribe((res: any) => {
       if (res.status === 'success') {
         this.enrollments = res.data.enrollments;
       }
     });
   }
-  receiveSearch($event: string) {
-    console.log($event);
-    this.searchEnrollments($event);
+
+  getEnrollmentsByParams(params: any) {
+    this.enrollmentService
+      .getEnrollmentsByParams(params)
+      .subscribe((res: any) => {
+        if (res.status === 'success') {
+          this.enrollments = res.data.enrollments;
+        }
+      });
   }
 
+  receiveSearch($event: string) {
+    this.getEnrollmentsByTerm($event);
+  }
+
+  receiveParams($event: Param) {
+    this.addNewParams($event);
+  }
+
+  addNewParams(param: Param) {
+    this.params = this.params.filter((p) => p.type !== param.type);
+    this.params.push(param);
+    console.log('params', this.params);
+    this.getEnrollmentsByParams(this.params);
+  }
 }
