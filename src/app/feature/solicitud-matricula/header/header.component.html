@@ -1,5 +1,9 @@
 <div class="w-full px-4 bg-neutral-content">
   <ng-content select="[breadcrumbs]"></ng-content>
-  <h1 class="text-primary text-3xl font-light mt-4 ml-2 pb-4 capitalize">Solicitudes de matriculas</h1>
+  <div class="w-full inline-flex items-start justify-between">
+    <h1 class="text-primary text-3xl font-light mt-4 ml-2 pb-4 capitalize">Solicitudes de matriculas</h1>
+  <ng-content select="[search]"></ng-content>
+</div>
+
   <ng-content select="[tabs]"></ng-content>
 </div>

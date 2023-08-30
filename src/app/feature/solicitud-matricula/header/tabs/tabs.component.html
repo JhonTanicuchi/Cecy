@@ -1,5 +1,8 @@
 <div class="tabs">
-  <a class="tab tab-lifted" routerLink="solicitudes-matriculas">Ordinaria</a>
-  <a class="tab tab-lifted tab-active">Extraordinaria</a>
+  <a
+    *ngFor="let enrollmentType of enrollmentTypes"
+    class="tab tab-lifted"
+    (click)="select(enrollmentType)"
+    [ngClass]="{ 'tab-active': selectTab === enrollmentType.value }">
+    {{ enrollmentType.value }}</a>
 </div>
-

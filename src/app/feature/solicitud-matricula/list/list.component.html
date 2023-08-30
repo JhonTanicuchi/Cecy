@@ -1,24 +1,43 @@
 <header-solicitud-matriculas>
-  <breadcrumbs-solicitud-matriculas breadcrumbs></breadcrumbs-solicitud-matriculas>
-  <tabs-solicitud-matriculas tabs></tabs-solicitud-matriculas>
+  <breadcrumbs-solicitud-matriculas
+    breadcrumbs
+  ></breadcrumbs-solicitud-matriculas>
+  <search-solicitud-matriculas
+    search
+    (searchEvent)="receiveSearch($event)"
+  ></search-solicitud-matriculas>
+  <tabs-solicitud-matriculas
+    tabs
+    (selected)="receiveParams($event)"
+  ></tabs-solicitud-matriculas>
 </header-solicitud-matriculas>
 
-<div class="w-full h-[calc(100vh-4rem-9rem+4px)] p-4 bg-white border-t-[1px] border-[#535a6650]">
-  <div class="flex justify-between my-4">
-    <div class="w-1/6">
-      <div class="relative">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-          <span class="fa-solid fa-magnifying-glass"></span>
-        </div>
-        <button
-          class="btn btn-sm gap-2 rounded-md bg-primary text-xs border-0 shadow	shadow-[#6b6b6b] px-8 ml-4 hover:bg-primary-focus hover:scale-105"
-          routerLink="/layout/personal/usuarios/form">
-          <span class="fas fa-plus text-sm leading-none"></span>
-          Descargar CSV
-        </button>
-      </div>
+<div
+  class="w-full h-[calc(100vh-4rem-9rem+4px)] p-6 bg-white border-t-[1px] border-[#535a6650]"
+>
+  <div class="flex justify-between mb-6">
+    <div class="w-2/6">
+      <button
+        type="button"
+        class="inline-flex items-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-4 h-8 text-center"
+      >
+        <svg
+          aria-hidden="true"
+          class="w-4 h-4 mr-2 fill-current"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+            clip-rule="evenodd"
+          ></path></svg
+        >Descargar CSV
+      </button>
     </div>
     <div class="flex">
+<<<<<<< HEAD
       <div>
         <button id="dropdownCheckboxButton" data-dropdown-toggle="dropdownDefaultCheckbox"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 h-8 ml-4 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -60,20 +79,30 @@
       </select>
 
 
+=======
+      <combobox-periods (selected)="receiveParams($event)"></combobox-periods>
+      <combobox-workings-days (selected)="receiveParams($event)"></combobox-workings-days>
+      <combobox-careers (selected)="receiveParams($event)"></combobox-careers>
+      <combobox-courses (selected)="receiveParams($event)"></combobox-courses>
+      <combobox-parallels (selected)="receiveParams($event)"></combobox-parallels>
+>>>>>>> 88e988634e2d4fe0a3f8864e3fd4309a352adfeb
     </div>
   </div>
 
   <div>
-
-    <div class="h-[calc(100vh-4rem-16rem-5px)] overflow-hidden relative rounded-md">
-      <div class="h-[calc(100vh-4rem-20rem)] border border-[#535a6650] rounded-md">
+    <div
+      class="h-[calc(100vh-4rem-16rem-5px)] overflow-hidden relative rounded-md"
+    >
+      <div
+        class="h-[calc(100vh-4rem-20rem)] border border-[#535a6650] rounded-md"
+      >
         <table class="my_table w-full text-sm text-left text-neutral -mt-[1px]">
-          <thead class="text-xs text-neutral uppercase bg-primary dark:bg-primary dark:text-neutral-content">
+          <thead
+            class="text-xs text-neutral uppercase bg-primary dark:bg-primary dark:text-neutral-content"
+          >
             <tr>
               <th></th>
-              <th scope="col" class="py-3 px-6">
-                Perfil
-              </th>
+              <th scope="col" class="py-3 px-6">Perfil</th>
               <th scope="col" class="py-3 px-6">
                 <div class="flex items-center">
                   Nombre
@@ -85,74 +114,104 @@
                   </a>
                 </div>
               </th>
+              <th scope="col" class="py-3 px-6">Identificación</th>
+              <th scope="col" class="py-3 px-6">Nombre curso</th>
+              <th scope="col" class="py-3 px-6">Carrera</th>
+              <th scope="col" class="py-3 px-6">Estado</th>
+              <th scope="col" class="py-3 px-6">Fecha</th>
+
               <th scope="col" class="py-3 px-6">
-                Identificación
-              </th>
-              <th scope="col" class="py-3 px-6">
-                Correo electrónico
-              </th>
-              <th scope="col" class="py-3 px-6">
-                Rol
-              </th>
-              <th scope="col" class="py-3 px-6">
-                <span class="sr-only">Accciones</span>
+                <span class="sr-only">Acciones</span>
               </th>
             </tr>
           </thead>
           <tbody class="divide-y-[0.5px] divide-[#535A6640]">
-            <tr class="bg-white hover:bg-neutral-content transition-all"*ngFor="let enrollment of enrollments">
-              <th scope="row" class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral">
+            <tr
+              class="bg-white hover:bg-neutral-content transition-all"
+              *ngFor="let enrollment of enrollments"
+            >
+              <th
+                scope="row"
+                class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral"
+              >
                 1
               </th>
               <td class="py-1 px-6 text-left">
                 <div tabindex="0" class="avatar py-1">
                   <div class="w-9 mask mask-squircle">
-                    <div class="inline-flex overflow-hidden relative justify-center items-center w-9 h-9 bg-neutral">
-                      <span class="font-medium text-neutral-content uppercase">"Huevo"</span>
+                    <div
+                      class="inline-flex overflow-hidden relative justify-center items-center w-9 h-9 bg-neutral"
+                    >
+                      <span
+                        class="font-medium text-neutral-content uppercase"
+                        >{{
+                          enrollment.student_id.person_id | NameInitials
+                        }}</span
+                      >
                     </div>
                   </div>
                 </div>
               </td>
-              <td class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral">
-                Ruben Perez
+              <td
+                class="py-1 px-6 font-medium text-neutral whitespace-nowrap dark:text-neutral"
+              >
+                {{ enrollment.student_id.person_id.names }}
+                {{ enrollment.student_id.person_id.last_names }}
               </td>
               <td class="py-1 px-6">
-                1726508581
+                {{ enrollment.student_id.person_id.identification }}
               </td>
               <td class="py-1 px-6">
-                juan-perez@oulook.com
+                {{ enrollment.course_id.name }}
               </td>
               <td class="py-1 px-6">
-                secretario
+                {{ enrollment.career_id.name }}
+              </td>
+              <td class="py-1 px-6">
+                {{ enrollment.state_id.value }}
+              </td>
+              <td class="py-1 px-6">
+                {{ enrollment.created_at | date : "dd/MM/yyyy" }}
               </td>
               <th class="py-1 px-6 text-right">
                 <span
-                  class="fa-regular fa-pen-to-square text-lg cursor-pointer transition-all hover:text-primary"></span>
+                  class="fa-regular fa-pen-to-square text-lg cursor-pointer transition-all hover:text-primary"
+                ></span>
                 <span
-                  class="fa-regular fa-trash-can text-lg ml-3 cursor-pointer transition-all hover:text-red-600"></span>
+                  class="fa-regular fa-trash-can text-lg ml-3 cursor-pointer transition-all hover:text-red-600"
+                ></span>
               </th>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <div class="absolute bottom-0 right-0 h-10 overflow-hidden flex items-center justify-center">
+      <div
+        class="absolute bottom-0 right-0 h-10 overflow-hidden flex items-center justify-center"
+      >
         <nav>
           <ul class="inline-flex items-center -space-x-px">
             <li>
-              <a href="#"
-                class=" py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+              <a
+                href="#"
+                class="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+              >
                 <span class="sr-only">Atras</span>
                 <span class="fa-solid fa-angle-left"></span>
               </a>
             </li>
             <li>
-              <a href="#"
-                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
+              <a
+                href="#"
+                class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+                >1</a
+              >
             </li>
             <li>
-              <a href="#"
-                class=" py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">
+              <a
+                href="#"
+                class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700"
+              >
                 <span class="sr-only">Siguiente</span>
                 <span class="fa-solid fa-angle-right"></span>
               </a>
@@ -161,8 +220,5 @@
         </nav>
       </div>
     </div>
-
-
-
   </div>
 </div>
